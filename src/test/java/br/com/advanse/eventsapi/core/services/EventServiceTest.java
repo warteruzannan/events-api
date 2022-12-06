@@ -3,7 +3,6 @@ package br.com.advanse.eventsapi.core.services;
 import br.com.advanse.eventsapi.core.models.Event;
 import br.com.advanse.eventsapi.core.repositories.EventRepository;
 import br.com.advanse.eventsapi.resolvers.EventParameterResolver;
-import org.aspectj.lang.annotation.Before;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
