@@ -1,9 +1,11 @@
-name: "Dev - Test"
+name: "Build"
 
 on:
-  push:
-    branches:
-      - main
+  workflow_run:
+    workflows: ["Test"]
+    branches: [main]
+    types:
+      - completed
 
 jobs:
   dev-test:
@@ -27,11 +29,3 @@ jobs:
 
       - name: Run Build
         run: mvn clean install
-
-      - name: SonarQube Scan
-        run: | 
-          mvn clean verify sonar:sonar \
-            -Dsonar.projectKey=events-api \
-            -Dsonar.host.url=${{ secrets.SONARQUBE_HOST }} \
-            -Dsonar.login=${{ secrets.SONARQUBE_TOKEN }} \
-            -Dsonar.qualitygate.wait=true
