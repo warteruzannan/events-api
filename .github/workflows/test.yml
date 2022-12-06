@@ -30,7 +30,7 @@ jobs:
 
       - name: SonarQube Scan
         run: | 
-          mvn clean verify sonar:sonar \ 
+          mvn clean verify sonar:sonar \
             -Dsonar.projectKey=events-api \
             -Dsonar.host.url=http://159.223.195.60:9000 \
             -Dsonar.login=sqa_e55b54a5c77d31640762cf42817f79da86091759 \
