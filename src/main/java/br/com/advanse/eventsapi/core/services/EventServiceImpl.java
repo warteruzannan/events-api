@@ -1,5 +1,6 @@
 package br.com.advanse.eventsapi.core.services;
 
+import br.com.advanse.eventsapi.application.dtos.EventDTO;
 import br.com.advanse.eventsapi.core.models.Event;
 import br.com.advanse.eventsapi.core.repositories.EventRepository;
 import org.springframework.stereotype.Service;
