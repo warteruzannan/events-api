@@ -72,3 +72,12 @@ jobs:
             -Dsonar.host.url=${{ secrets.SONARQUBE_HOST }} \
             -Dsonar.login=${{ secrets.SONARQUBE_TOKEN }} \
             -Dsonar.qualitygate.wait=true
+
+  deploy:
+    name: quality
+    runs-on: ubuntu-latest
+    needs: quality
+    steps:
+      - name: Deploy
+        run: |
+          echo deploy
