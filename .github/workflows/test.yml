@@ -27,7 +27,9 @@ jobs:
         run: mvn clean install
 
       - name: SonarQube Scan
-        uses: kitabisa/sonarqube-action@v1.2.0
+        uses: kitabisa/sonarqube-action@master
         with:
           host: ${{ secrets.SONARQUBE_HOST }}
           login: ${{ secrets.SONARQUBE_TOKEN }}
+          projectBaseDir: "src/"
+          projectKey: "events-api"
