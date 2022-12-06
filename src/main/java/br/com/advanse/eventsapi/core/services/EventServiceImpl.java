@@ -1,5 +1,6 @@
 package br.com.advanse.eventsapi.core.services;
 
+import br.com.advanse.eventsapi.application.dtos.EventDTO;
 import br.com.advanse.eventsapi.core.models.Event;
 import br.com.advanse.eventsapi.core.repositories.EventRepository;
 import org.springframework.stereotype.Service;
@@ -16,11 +17,13 @@ public class EventServiceImpl implements EventService{
 
     @Override
     public Event save(Event event) {
+        System.out.println(new EventDTO(null, null, null, null, null));
         return this.eventRepository.save(event);
     }
 
     @Override
     public Collection<Event> list() {
+
         return this.eventRepository.list();
     }
 }
