@@ -1,0 +1,24 @@
+name: "Dev - Test"
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  dev-test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+        with:
+          ref: ${{ github.head_ref }}
+
+      - name: Set up JDK
+        uses: actions/setup-java@v3.6.0
+        with:
+          distribution: 'temurin'
+          java-version: '17'
+          cache: 'maven'
+
+      - name: Run Unit & Integration Tests
+        run: mvn test
