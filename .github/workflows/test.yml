@@ -9,9 +9,11 @@ jobs:
   dev-test:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v3
+      - name: Checkout
+        uses: actions/checkout@v3
         with:
           ref: ${{ github.head_ref }}
+          fetch-depth: 0
 
       - name: Set up JDK
         uses: actions/setup-java@v3.6.0
