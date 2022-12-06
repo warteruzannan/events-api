@@ -20,8 +20,11 @@ jobs:
           java-version: '17'
           cache: 'maven'
 
-      - name: Run Unit & Integration Tests
+      - name: Run Testes
         run: mvn test
+
+      - name: Run Build
+        run: mvn clean install
 
       - name: SonarQube Scan
         uses: kitabisa/sonarqube-action@v1.2.0
