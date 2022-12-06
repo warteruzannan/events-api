@@ -25,7 +25,7 @@ jobs:
 
       - name: Run Build
         run: mvn test
-##################################################################
+
   build:
     name: build
     runs-on: ubuntu-latest
@@ -46,7 +46,7 @@ jobs:
 
       - name: Run Build
         run: mvn clean install
-##################################################################
+
   quality:
     name: quality
     runs-on: ubuntu-latest
@@ -66,9 +66,9 @@ jobs:
           cache: 'maven'
 
       - name: SonarQube Scan
-          run: |
-            mvn clean verify sonar:sonar \
-              -Dsonar.projectKey=events-api \
-              -Dsonar.host.url=${{ secrets.SONARQUBE_HOST }} \
-              -Dsonar.login=${{ secrets.SONARQUBE_TOKEN }} \
-              -Dsonar.qualitygate.wait=true
+        run: |
+          mvn clean verify sonar:sonar \
+            -Dsonar.projectKey=events-api \
+            -Dsonar.host.url=${{ secrets.SONARQUBE_HOST }} \
+            -Dsonar.login=${{ secrets.SONARQUBE_TOKEN }} \
+            -Dsonar.qualitygate.wait=true
