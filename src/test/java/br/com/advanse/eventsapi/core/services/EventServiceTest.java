@@ -30,7 +30,7 @@ class EventServiceTest {
     @Test
     @DisplayName("Should call event repository just one time")
     void should_call_repository_just_one_time(Event event){
-        int expectedTimes = 2;
+        int expectedTimes = 1;
 
         this.sut.save(event);
 
